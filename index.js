@@ -16,7 +16,8 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+//In javascript, inner functions have access to variables from outer functions. This is called closure, and takes place because the nested function is considered a part of, or inside, the outer function and therefore has access to
+//variables function scoped to the outer function. This only goes in one direction(Outer functions do not have access to anything function scoped in nested functions).
 
 
 
@@ -28,9 +29,15 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+    if(num===0)
+    {
+      return 0;
+    }
+    else{
+      //if the num>0 recurse returning the n* (n -1...) until number is 0
+        return num + summation(num - 1);
+    }
   }
  
 
