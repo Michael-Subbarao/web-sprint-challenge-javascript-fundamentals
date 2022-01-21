@@ -35,7 +35,7 @@ function summation(num) {
       return 0;
     }
     else{
-      //if the num>0 recurse returning the n* (n -1...) until number is 0
+      //if the num>0 recurse returning the n + (n -1...) until number is 0
         return num + summation(num - 1);
     }
   }
@@ -63,8 +63,13 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(arr){
+    //an empty array to store the strings
+    const displayNames = [];
+    //pushing strings with name and scientific name for each object in the string with forEach to the empty array
+    arr.forEach(animal => displayNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
+    //returning the array now that it is populated
+    return displayNames;
   }
   
 
